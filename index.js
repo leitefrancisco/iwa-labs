@@ -1,36 +1,31 @@
-const { default: axios } = require("axios");
-const http = require("http");
-axio = require("axios");
+const   http = require ("http"),
+        logger = require("morgan"),
+        express = require("express"),
+        bodyParser = require("express");
 
-http.createServer((req,res)=>{
-    //function getNames that returns users
-    res.write(users.join(", "));
+//let to evoque express      
+let app = express();
 
-    res.write("\n" + emails.join(", "));
-    res.end();
-}).listen(8000);
+let port = 8000;
 
-let users = [];
-let emails = [];
+//force app to use body parser with json enabled to serve json back
+app.use(bodyParser.json());
 
-(async function getNames(){
-    try{
-        const{data} = await axios.get
-        ("https://jsonplaceholder.typicode.com/users");
-        users = data.map(user => user.name);
-        emails = data.map(email => email.email);//por queee? daonde vem o user e o email
+//setting the logger
+app.use(logger("tiny"));
 
-        if(emails.indexOf("Shanna@melissa.tv") > -1){
-            console.log("found");
-        } else {
-            console.log ("not found");
-        }
+app.get("/:foo/:bar",(req,res)=>{
+    res.json({"message": "Helo World!",
+                "data":[
+                    req.params.foo,
+                    req.params.bar
+                ]});
+})
 
 
 
-
-    } catch (error){
-        console.log(error);
-    }
-    
-})();
+//make sure the server listen to an specific port
+app.listen(port, function(err){
+    //once it is connected it says it is litening to the port
+    console.log("Listening on port: "+ port);
+});
