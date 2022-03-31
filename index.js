@@ -20,6 +20,15 @@ let emails = [];
         users = data.map(user => user.name);
         emails = data.map(email => email.email);//por queee? daonde vem o user e o email
 
+        if(emails.indexOf("Shanna@melissa.tv") > -1){
+            console.log("found");
+        } else {
+            console.log ("not found");
+        }
+
+
+
+
     } catch (error){
         console.log(error);
     }
