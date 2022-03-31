@@ -1,13 +1,8 @@
 const express = require("express"),
-                router = express.Router();
+                router = express.Router(),
+                itemCtrl = require("./item-controller");
 
+router.get("/:foo/:bar", itemCtrl.helloWorld);
 
-app.get("/:foo/:bar",(req,res)=>{
-    res.json({"message": "Helo World!",
-                "data":[
-                    req.params.foo,
-                    req.params.bar
-                ]});
-});
-
-modules.exports = routes;
+//what is this?
+module.exports = router;
