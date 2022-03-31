@@ -1,3 +1,4 @@
+const { route } = require("express/lib/application");
 const   http = require ("http"),
         logger = require("morgan"),
         express = require("express"),
@@ -8,19 +9,18 @@ let app = express();
 
 let port = 8000;
 
+
+//middleware => happens befores gets and posts
+//everything goes throught the routes
+app.use(require('./routes'));
 //force app to use body parser with json enabled to serve json back
 app.use(bodyParser.json());
-
 //setting the logger
 app.use(logger("tiny"));
 
-app.get("/:foo/:bar",(req,res)=>{
-    res.json({"message": "Helo World!",
-                "data":[
-                    req.params.foo,
-                    req.params.bar
-                ]});
-})
+
+
+
 
 
 
