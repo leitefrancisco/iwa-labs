@@ -10,23 +10,23 @@ http.createServer((req,res)=>{
     res.end();
 }).listen(8000);
 
-let users = [];
-let emails = [];
+// let users = [];
+// let emails = [];
 
-(async function getNames(){
-    // try{
-    //     const{data} = await axios.get
-    //     ("https://jsonplaceholder.typicode.com/users");
-    //     users = data.map(user => user.name);
-    //     emails = data.map(email => email.email);//por queee? daonde vem o user e o email
+// (async function getNames(){
+//     try{
+//         const{data} = await axios.get
+//         ("https://jsonplaceholder.typicode.com/users");
+//         users = data.map(user => user.name);
+//         emails = data.map(email => email.email);//por queee? daonde vem o user e o email
 
-    //     if(emails.indexOf("Shanna@melissa.tv") > -1){
-    //         console.log("found");
-    //     } else {
-    //         console.log ("not found");
-    //     }
-    // } catch (error){
-    //     console.log(error);
-    // }
+//         if(emails.indexOf("Shanna@melissa.tv") > -1){
+//             console.log("found");
+//         } else {
+//             console.log ("not found");
+//         }
+//     } catch (error){
+//         console.log(error);
+//     }
     
-})();
+// })();
