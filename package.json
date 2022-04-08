@@ -20,8 +20,12 @@
   "homepage": "https://github.com/leitefrancisco/iwa-labs#readme",
   "dependencies": {
     "axios": "^0.26.1",
+    "del": "^6.0.0",
     "express": "^4.17.3",
+    "fs": "^0.0.1-security",
     "mongoose": "^6.2.9",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "path": "^0.12.7"
   }
 }
