@@ -9,6 +9,6 @@ const userSchema = new mongoose.Schema({
         enum: ['MALE', 'FEMALE']
     },
     phone: Number
-})
+});
 
 module.exports = mongoose.model('User', userSchema);
